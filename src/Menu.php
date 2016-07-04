@@ -10,11 +10,12 @@ class Menu
     private $twig;
     private $yaml;
 
-    public function __construct($config, $path, $cachePath = '')
+    public function __construct($config, $templates, $cachePath = '')
     {
         $yaml   = Yaml::parse(file_get_contents($config));
         $cache  = ($cachePath) ? ['cache' => $cachePath] : [];
-        $loader = new \Twig_Loader_Filesystem($path);
+
+        $loader = new \Twig_Loader_Filesystem($templates);
         $twig   = new \Twig_Environment($loader, $cache);
 
         $this->twig = $twig;

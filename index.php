@@ -6,7 +6,8 @@ use Groovey\Menu\Menu;
 
 $menu = new Menu(
         $config    = __DIR__ . '/yaml/menu.yml',
-        $templates = __DIR__ . '/templates/menus'
+        $templates = __DIR__ . '/templates/menus',
+        $cache     = __DIR__ . '/cache'
     );
 
 print $menu->render();

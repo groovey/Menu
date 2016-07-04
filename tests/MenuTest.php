@@ -11,9 +11,9 @@ class MenuTest extends PHPUnit_Framework_TestCase
         $app['debug'] = true;
 
         $app->register(new MenuServiceProvider(), [
-                'menu.config' => __DIR__.'/../yaml/menu.yml',
-                'menu.path'   => __DIR__.'/../templates/menus',
-                'menu.cache'  => '',
+                'menu.config'    => __DIR__.'/../yaml/menu.yml',
+                'menu.templates' => __DIR__.'/../templates/menus',
+                'menu.cache'     => __DIR__.'/../cache',
             ]);
 
         return $app;

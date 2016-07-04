@@ -14,11 +14,11 @@ class MenuServiceProvider implements ServiceProviderInterface, BootableProviderI
     {
         $app['menu'] = function ($app) {
 
-            $config = $app['menu.config'];
-            $path   = $app['menu.path'];
-            $cache  = (isset($app['menu.cache'])) ? $app['menu.cache'] : '';
+            $config    = $app['menu.config'];
+            $templates = $app['menu.templates'];
+            $cache     = (isset($app['menu.cache'])) ? $app['menu.cache'] : '';
 
-            return new Menu($config, $path, $cache);
+            return new Menu($config, $templates, $cache);
         };
     }
 
