@@ -32,15 +32,15 @@ class Menu
         foreach ($this->yaml as $menu) {
             if (!isset($menu['submenu'])) {
                 $html .= $twig->render('parent.html', [
-                        'title' => $menu['title'],
-                        'url'   => $menu['url'],
-                        'icon'  => $menu['icon'],
+                        'title' => coalesce($menu['title']),
+                        'url'   => coalesce($menu['url']),
+                        'icon'  => coalesce($menu['icon']),
                     ]);
             } else {
                 $html .= $twig->render('child.html', [
-                        'title'   => $menu['title'],
-                        'icon'    => $menu['icon'],
-                        'submenu' => $menu['submenu'],
+                        'title'   => coalesce($menu['title']),
+                        'icon'    => coalesce($menu['icon']),
+                        'submenu' => coalesce($menu['submenu']),
                     ]);
             }
         }
