@@ -1,6 +1,6 @@
-# Config
+# Menu
 
-Groovey Config Package
+Groovey Menu Package
 
 
 ## Installation
