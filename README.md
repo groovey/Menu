@@ -42,5 +42,3 @@ $menu = new Menu(
 
 print $menu->render();
 ```
-
-
