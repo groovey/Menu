@@ -1,6 +1,6 @@
 # Config
 
-A Silex 2 service provider that uses the Laravel's config component.
+A menu generator.
 
 
 ## Installation
