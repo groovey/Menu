@@ -1,0 +1,21 @@
+{
+    "name": "groovey/menu",
+    "description": "A Silex 2 menu generator.",
+    "keywords": ["silex", "silex 2"],
+    "authors": [
+        {
+            "name": "Harold Kim Cantil",
+            "email": "pokoot@gmail.com"
+        }
+    ],
+    "require": {
+        "silex/silex" : "~2.0",
+        "symfony/yaml" : "~3.0",
+        "twig/twig" : "~1.24"
+    },
+    "autoload": {
+        "psr-4": {
+            "Groovey\\Menu\\": "src"
+        }
+    }
+}
