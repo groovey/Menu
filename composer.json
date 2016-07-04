@@ -1,6 +1,6 @@
 {
     "name": "groovey/menu",
-    "description": "A Silex 2 menu generator.",
+    "description": "The Groovey Menu Package.",
     "keywords": ["silex", "silex 2"],
     "authors": [
         {
