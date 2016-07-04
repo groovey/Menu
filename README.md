@@ -1,6 +1,6 @@
 # Config
 
-A menu generator.
+Groovey Config Package
 
 
 ## Installation
