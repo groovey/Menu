@@ -1,18 +1,6 @@
-# Menu
-
-Groovey Menu Package
-
-
-## Installation
-
-    $ composer require groovey/menu
-
-## Usage
-
-```php
 <?php
 
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
@@ -23,15 +11,12 @@ $app['debug'] = true;
 
 $app->register(new TwigServiceProvider(), [
         'twig.path' => [
-                __DIR__.'/templates/menus',        ],
+                __DIR__.'/../templates/menus',        ],
             ]
     );
 
 $app->register(new MenuServiceProvider(), [
-        'menu.config' => __DIR__ . '/yaml/menu.yml'
+        'menu.config' => __DIR__.'/../yaml/menu.yml',
     ]);
 
-print $app['menu']->render();
-```
-
-
+echo $app['menu']->render();

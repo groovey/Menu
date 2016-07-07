@@ -14,11 +14,9 @@ class MenuServiceProvider implements ServiceProviderInterface, BootableProviderI
     {
         $app['menu'] = function ($app) {
 
-            $config    = $app['menu.config'];
-            $templates = $app['menu.templates'];
-            $cache     = (isset($app['menu.cache'])) ? $app['menu.cache'] : '';
+            $config = $app['menu.config'];
 
-            return new Menu($config, $templates, $cache);
+            return new Menu($app, $config);
         };
     }
 

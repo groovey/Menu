@@ -2,23 +2,19 @@
 
 namespace Groovey\Menu;
 
+use Pimple\Container;
 use Symfony\Component\Yaml\Yaml;
 
 class Menu
 {
     private $html;
-    private $twig;
+    private $app;
     private $yaml;
 
-    public function __construct($config, $templates, $cachePath = '')
+    public function __construct(Container $app, $config)
     {
-        $yaml   = Yaml::parse(file_get_contents($config));
-        $cache  = ($cachePath) ? ['cache' => $cachePath] : [];
-
-        $loader = new \Twig_Loader_Filesystem($templates);
-        $twig   = new \Twig_Environment($loader, $cache);
-
-        $this->twig = $twig;
+        $yaml = Yaml::parse(file_get_contents($config));
+        $this->app = $app;
         $this->yaml = $yaml;
 
         $this->make();
@@ -26,22 +22,22 @@ class Menu
 
     public function make()
     {
-        $twig = $this->twig;
+        $app = $this->app;
         $html = $this->html;
 
         foreach ($this->yaml as $menu) {
             if (!isset($menu['submenu'])) {
-                $html .= $twig->render('parent.html', [
-                        'title' => coalesce($menu['title']),
-                        'url'   => coalesce($menu['url']),
-                        'icon'  => coalesce($menu['icon']),
-                    ]);
+                $html .= $app['twig']->render('parent.html', [
+                                'title' => coalesce($menu['title']),
+                                'url'   => coalesce($menu['url']),
+                                'icon'  => coalesce($menu['icon']),
+                            ]);
             } else {
-                $html .= $twig->render('child.html', [
-                        'title'   => coalesce($menu['title']),
-                        'icon'    => coalesce($menu['icon']),
-                        'submenu' => coalesce($menu['submenu']),
-                    ]);
+                $html .= $app['twig']->render('child.html', [
+                                        'title'   => coalesce($menu['title']),
+                                        'icon'    => coalesce($menu['icon']),
+                                        'submenu' => coalesce($menu['submenu']),
+                                    ]);
             }
         }
 
