@@ -22,14 +22,14 @@ $app = new Application();
 $app['debug'] = true;
 
 $app->register(new TwigServiceProvider(), [
-            'twig.path' => __DIR__.'/templates/menus'
+            'twig.path' => __DIR__.'/templates'
         ]);
 
 $app->register(new MenuServiceProvider(), [
         'menu.config' => __DIR__ . '/yaml/menu.yml'
     ]);
 
-print $app['menu']->render();
+echo $app['menu']->render();
 ```
 
 
