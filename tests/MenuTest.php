@@ -6,7 +6,9 @@ use Groovey\Menu\Providers\MenuServiceProvider;
 
 class MenuTest extends PHPUnit_Framework_TestCase
 {
-    private function init()
+    public $app;
+
+    public function setUp()
     {
         $app = new Application();
         $app['debug'] = true;
@@ -19,12 +21,12 @@ class MenuTest extends PHPUnit_Framework_TestCase
                 'menu.config' => __DIR__.'/../yaml/menu.yml',
             ]);
 
-        return $app;
+        $this->app = $app;
     }
 
     public function testMenu()
     {
-        $app = $this->init();
+        $app = $this->app();
 
         $output = $app['menu']->render();
         $this->assertRegExp('/mm-dropdown/', $output);
