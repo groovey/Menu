@@ -14,11 +14,11 @@ class MenuTest extends PHPUnit_Framework_TestCase
         $app['debug'] = true;
 
         $app->register(new TwigServiceProvider(), [
-                    'twig.path' => __DIR__.'/../templates'
+                    'twig.path' => getcwd().'/resources/templates',
                 ]);
 
         $app->register(new MenuServiceProvider(), [
-                'menu.config' => __DIR__.'/../yaml/menu.yml',
+                'menu.config' => getcwd().'/resources/yaml/menus.yml',
             ]);
 
         $this->app = $app;
@@ -26,7 +26,7 @@ class MenuTest extends PHPUnit_Framework_TestCase
 
     public function testMenu()
     {
-        $app = $this->app();
+        $app = $this->app;
 
         $output = $app['menu']->render();
         $this->assertRegExp('/mm-dropdown/', $output);
