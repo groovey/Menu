@@ -1,7 +1,7 @@
 {
     "name": "groovey/menu",
     "description": "Groovey Menu Package.",
-    "keywords": ["silex", "silex 2"],
+    "keywords": ["silex", "groovey"],
     "authors": [
         {
             "name": "Harold Kim Cantil",
