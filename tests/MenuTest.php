@@ -14,8 +14,8 @@ class MenuTest extends PHPUnit_Framework_TestCase
         $app['debug'] = true;
 
         $app->register(new TwigServiceProvider(), [
-                    'twig.path' => getcwd().'/resources/templates',
-                ]);
+                'twig.path' => getcwd().'/resources/templates',
+            ]);
 
         $app->register(new MenuServiceProvider(), [
                 'menu.config' => getcwd().'/resources/yaml/menus.yml',

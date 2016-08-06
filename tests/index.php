@@ -10,8 +10,8 @@ $app = new Application();
 $app['debug'] = true;
 
 $app->register(new TwigServiceProvider(), [
-            'twig.path' => __DIR__.'/../resources/templates',
-        ]);
+        'twig.path' => __DIR__.'/../resources/templates',
+    ]);
 
 $app->register(new MenuServiceProvider(), [
         'menu.config' => __DIR__.'/../resources/yaml/menus.yml',
