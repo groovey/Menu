@@ -30,5 +30,3 @@ $app->register(new MenuServiceProvider(), [
 
 echo $app['menu']->render();
 ```
-
-
