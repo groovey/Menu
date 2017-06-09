@@ -2,5 +2,8 @@
     <a href="{{url}}">
         <i class="menu-icon fa fa-{{icon}}"></i>
         <span class="mm-text">{{title}}</span>
+        {% if status %}
+            <span class="alert alert-info">({{status}})</span>
+        {% endif %}
     </a>
 </li>

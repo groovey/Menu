@@ -28,14 +28,16 @@ class Menu
         foreach ($this->yaml as $menu) {
             if (!isset($menu['submenu'])) {
                 $html .= $app['twig']->render('menus/parent.html', [
-                                'title' => coalesce($menu['title']),
-                                'url'   => coalesce($menu['url']),
-                                'icon'  => coalesce($menu['icon']),
+                                'title'  => coalesce($menu['title']),
+                                'url'    => coalesce($menu['url']),
+                                'icon'   => coalesce($menu['icon']),
+                                'status' => coalesce($menu['status']),
                             ]);
             } else {
                 $html .= $app['twig']->render('menus/child.html', [
                                         'title'   => coalesce($menu['title']),
                                         'icon'    => coalesce($menu['icon']),
+                                        'status'  => coalesce($menu['status']),
                                         'submenu' => coalesce($menu['submenu']),
                                     ]);
             }

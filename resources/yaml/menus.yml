@@ -1,22 +1,22 @@
 -   title: Parent 1
     url: parent1.php
-    icon: home
+    icon: bluetooth
+    status: new
 
 -   title: Parent 2
-    icon: bluetooth
-
     submenu:
     -   title: Child 1
         url: child1.html
     -   title: Child 2
         url: child2.html
-
 
 -   title: Parent 3
-    icon: folder
-
+    status: new
     submenu:
     -   title: Child 1
         url: child1.html
     -   title: Child 2
         url: child2.html
+
+-   title: Parent 4
+    url: parent4.php
